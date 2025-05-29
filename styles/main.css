@@ -53,45 +53,59 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    min-width: 0; /* 추가: 넘침 방지 */
+    min-width: 0;
 }
 
 /* 그래프 영역 */
-/* 그래프 영역을 가로 정렬 */
-.graph-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem; /* 카드 사이 간격 */
-  padding: 1rem 0;
-  max-width: 800px;    /* ✅ 고정 너비 지정 */
-  margin: 0 auto;      /* ✅ 가운데 정렬 */
+.gauge-row .gauge {
+    flex: 1;
 }
 
-/* 각 개별 gauge 카드 */
+.gauge-row canvas {
+    width: 120px !important;
+    display: block;
+    margin: 0 auto;
+}
+
+.gauge-row h6 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+}
+
+.gauge-row p {
+    font-size: 0.9rem;
+}
+
+.graph-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .graph-section .gauge {
-  flex: 0 0 220px;      /* ✅ 정확한 너비 설정 */
-  max-width: 240px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex: 0 0 220px;
+    max-width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .graph-section .gauge canvas {
-    margin-bottom: 0.25rem;
     padding: 0;
 }
 
 .graph-section .gauge p {
-    margin: 0.25rem 0;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .graph-section .gauge .infoBtn {
-    margin: 0.2rem;
+    margin: 0;
     padding: 0;
 }
 
@@ -100,22 +114,69 @@ body {
     font-weight: bold;
 }
 
+.gauge {
+    position: relative;
+}
+
+.gauge-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.gauge-value p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.gauge-value img {
+    display: block;
+}
+
 /* 지도 영역 */
+.map-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.dust-toggle-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.dust-toggle-vertical button {
+    padding: 0.4rem 0.6rem;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
 .map-section {
+    height: 400px;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    min-width: 0; /* 추가: 넘침 방지 */
+    min-width: 0;
     background-color: #ffffff;
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     text-align: center;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #map {
+    height: 280px;
     width: 100%;
-    height: 400px;
     background-color: white;
     border-radius: 8px;
 }
@@ -132,9 +193,10 @@ body {
 }
 
 #ruleGauge {
-    margin-top: 1rem;
     width: 100%;
-    max-width: 700px;
+    max-height: 100px;
+    object-fit: contain;
+    margin-top: 10px;
 }
 
 .leaflet-tooltip.region-tooltip {
@@ -180,13 +242,33 @@ body {
 }
 
 /* 등급별 텍스트 색상 */
-.text-grade1 { color: #4285F4 !important; }
-.text-grade2 { color: #9CD5F9 !important; }
-.text-grade3 { color: #22B14C !important; }
-.text-grade4 { color: #B5E61D !important; }
-.text-grade5 { color: #FFD400 !important; }
-.text-grade6 { color: #FF7F27 !important; }
-.text-grade7 { color: #F52020 !important; }
+.text-grade1 {
+    color: #4285F4 !important;
+}
+
+.text-grade2 {
+    color: #9CD5F9 !important;
+}
+
+.text-grade3 {
+    color: #22B14C !important;
+}
+
+.text-grade4 {
+    color: #B5E61D !important;
+}
+
+.text-grade5 {
+    color: #FFD400 !important;
+}
+
+.text-grade6 {
+    color: #FF7F27 !important;
+}
+
+.text-grade7 {
+    color: #F52020 !important;
+}
 
 /* 팝오버 박스 */
 .popover-box {
@@ -201,7 +283,7 @@ body {
     margin-top: 6px;
     width: 200px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-    z-index: 10;
+    z-index: 999;
     font-size: 0.85rem;
 }
 
@@ -221,4 +303,3 @@ body {
         margin-top: 1rem;
     }
 }
-

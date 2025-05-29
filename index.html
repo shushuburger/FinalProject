@@ -64,38 +64,53 @@
                 </div>
 
                 <!-- 게이지 차트 -->
-                <div class="d-flex justify-content-between text-center mb-4">
+                <div class="gauge-row d-flex justify-content-between text-center align-items-start mb-3">
                     <div class="gauge">
                         <h6>미세먼지 (PM10)</h6>
-                        <canvas id="pm10Chart" width="120" height="80"></canvas>
-                        <p id="pm10">양호 (32)</p>
+                        <canvas id="pm10Chart"></canvas>
+                        <div class="gauge-value d-flex align-items-center justify-content-center gap-2">
+                            <p id="pm10">양호 (32)</p>
+                            <button class="btn infoBtn" data-type="PM10">
+                                <img src="./assets/icons/information.png" alt="상세정보" width="20" height="20">
+                            </button>
+                            <div class="popover-box" id="pm10-popover" style="display: none;">...</div>
+                        </div>
                     </div>
                     <div class="gauge">
                         <h6>초미세먼지 (PM2.5)</h6>
-                        <canvas id="pm25Chart" width="120" height="80"></canvas>
-                        <p id="pm25">양호 (32)</p>
+                        <canvas id="pm25Chart"></canvas>
+                        <div class="gauge-value d-flex align-items-center justify-content-center gap-2">
+                            <p id="pm25">양호 (32)</p>
+                            <button class="btn infoBtn" data-type="PM2.5">
+                                <img src="./assets/icons/information.png" alt="상세정보" width="20" height="20">
+                            </button>
+                            <div class="popover-box" id="pm2.5-popover" style="display: none;">...</div>
+                        </div>
                     </div>
                     <div class="gauge">
                         <h6>오존 (O₃)</h6>
-                        <canvas id="o3Chart" width="120" height="80"></canvas>
-                        <p id="o3">양호 (32)</p>
+                        <canvas id="o3Chart"></canvas>
+                        <div class="gauge-value d-flex align-items-center justify-content-center gap-2">
+                            <p id="o3">양호 (32)</p>
+                            <button class="btn infoBtn" data-type="O3">
+                                <img src="./assets/icons/information.png" alt="상세정보" width="20" height="20">
+                            </button>
+                            <div class="popover-box" id="o3-popover" style="display: none;">...</div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 토글 버튼 -->
-                <div class="dust-toggle text-center mb-3">
-                    <button id="pm10Btn" class="btn btn-primary">미세먼지</button>
-                    <button id="pm25Btn" class="btn btn-light">초미세먼지</button>
-                </div>
-
-                <!-- 지도 -->
-                <div class="map-section position-relative">
-                    <div id="map" style="height: 400px;"></div>
-                    <button id="myLocationBtn" class="btn btn-outline-secondary position-absolute"
-                        style="top: 10px; right: 10px; z-index: 1000;">
-                        내 위치
-                    </button>
-                    <img src="./assets/pm10Gauge.png" alt="수치 분류 기준" id="ruleGauge" class="mt-2">
+                <div class="map-wrapper d-flex align-items-start">
+                    <div class="dust-toggle-vertical d-flex flex-column me-2">
+                        <button id="pm10Btn" class="btn btn-primary mb-2">미세먼지</button>
+                        <button id="pm25Btn" class="btn btn-light">초미세먼지</button>
+                    </div>
+                    <div class="map-section position-relative">
+                        <div id="map" style="height: 400px;"></div>
+                        <button id="myLocationBtn" class="btn btn-outline-secondary position-absolute"
+                            style="top: 10px; right: 10px; z-index: 1000;">내 위치</button>
+                        <img src="./assets/pm10Gauge.png" alt="수치 분류 기준" id="ruleGauge" class="mt-2">
+                    </div>
                 </div>
             </div>
         </div>

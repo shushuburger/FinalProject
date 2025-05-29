@@ -40,6 +40,10 @@ document.addEventListener('DOMContentLoaded', () => {
     preferCanvas: true
   }).setView([36.5, 127.5], 7);
 
+  setTimeout(() => {
+  map.invalidateSize();
+}, 0);
+
   const myLocationBtn = document.getElementById('myLocationBtn');
   myLocationBtn.addEventListener('click', moveToMyLocation);
 

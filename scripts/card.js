@@ -834,3 +834,14 @@ prevBtn.addEventListener('click', prevSlide);
   //container.addEventListener('touchstart', touchStart);
   container.addEventListener('touchmove', touchMove);
   container.addEventListener('touchend', touchEnd);
+
+// 초기화 시 active 클래스 설정
+document.addEventListener('DOMContentLoaded', () => {
+  ageButtons.forEach(btn => {
+    if (btn.getAttribute('data-age') === currentAgeGroup) {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
+  });
+});
