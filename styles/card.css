@@ -61,6 +61,7 @@
 /*카드 이동 버튼*/
 .prev-btn,
 .next-btn {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

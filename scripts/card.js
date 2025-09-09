@@ -123,7 +123,7 @@ function restartLottieAnimations() {
     player.load(src);
   });
 }
-
+setInterval(nextSlide, 3000);
 // 등급에 따라 카드 안의 내용 렌더링
 // 부모 카테고리
 function renderParentCards(grade) {
