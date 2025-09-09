@@ -113,6 +113,35 @@ function prevSlide() { // 이전 카드 넘기기
     restartLottieAnimations(); // 애니메이션 다시 로드
   }, 300);
 }
+const toggleViewBtn = document.getElementById('toggleViewBtn');
+let isShowAll = false;
+let autoSlideInterval;
+
+function startAutoSlide() {
+  autoSlideInterval = setInterval(nextSlide, 3000);
+}
+function stopAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+startAutoSlide(); // 초기 자동 전환 시작
+
+toggleViewBtn.addEventListener('click', () => {
+  const cardsContainer = document.querySelector('.cards-container');
+  isShowAll = !isShowAll;
+
+  if (isShowAll) {
+    // 전체보기 모드로 변경
+    stopAutoSlide();
+    cardsContainer.classList.add('show-all');
+    toggleViewBtn.textContent = '슬라이드 보기';
+  } else {
+    // 다시 캐러셀 모드로
+    cardsContainer.classList.remove('show-all');
+    toggleViewBtn.textContent = '전체보기';
+    startAutoSlide();
+  }
+});
 
 
 // 애니메이션 다시 로드(카드 넘겨서 다시 돌아왔을 때도 애니메이션 보이게 하기 위해)

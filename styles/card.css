@@ -2,13 +2,50 @@
 /* 이 아래에서 작업하세요!! (경민,여민) */
 /* 주석 삭제하지 말 것! (github 편집 시 기준점으로 삼을 거임) */
 
+/* 기본 캐러셀 모드 */
+.cards-container {
+  display: flex;
+  height: 90%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  /* 기본 모드에서는 한 줄 */
+  flex-wrap: nowrap;
+}
+
+/* 전체보기 모드 */
+.cards-container.show-all {
+  transform: none !important; /* 캐러셀 transform 제거 */
+  transition: none !important;
+  flex-wrap: wrap; /* 여러 줄 */
+  justify-content: center; /* 가운데 정렬 */
+}
+
+.cards-container.show-all .card {
+  flex: 0 0 30%; /* 한 줄에 3개 정도 들어오게 */
+  margin: 10px;
+  height: auto; /* 높이 자동 */
+}
+
+/* 버튼 스타일 */
+#toggleViewBtn {
+  padding: 8px 16px;
+  background-color: #64b9ff;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+#toggleViewBtn:hover {
+  background-color: #4da0e0;
+}
+
 .guide-section {
   background-color: #ffffff;
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 550px;
+  height: 600px;
   overflow: hidden;
   perspective: 1000px;
 }
