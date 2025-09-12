@@ -35,12 +35,23 @@
   color: #fff;
   cursor: pointer;
 }
+ /* 토글 버튼 */
+#toggleViewBtn .toggleButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #f03d3d;
+}
 #toggleViewBtn:hover {
   background-color: #4da0e0;
 }
 
 .guide-section {
-  background-color: #ffffff;
+  background-color: #14b977;
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 12px;
@@ -52,6 +63,7 @@
 
 /*카드 집합 상위1*/
 .card-slider {
+  background-color: #f35d5d;
   position: relative;
   width: 100%;
   height: 80%;
@@ -60,6 +72,7 @@
 
 /*카드 집합 상위2*/
 .cards-wrapper {
+  background-color: rgb(255, 239, 58);
   height: 100%;
   overflow: hidden;
   align-items: center;
@@ -68,8 +81,11 @@
 
 /*카드 집합 상위3*/
 .cards-container {
+  background-color: #64b9ff;
+  margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
-  height: 90%;
+  height: 77%;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
@@ -78,10 +94,10 @@
 .card {
   flex: 0 0 70%;
   margin: 0 20px;
-  background-color: #ffffff;
+  background-color: #b65ef5;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  height: 70%;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,6 +145,7 @@
 
 /*카드 안에 텍스트(text)*/
 .card h3 {
+  background-color: aquamarine;
   padding: 0 20px;
   font-size: 20px;
   font-weight: bold;
@@ -137,6 +154,7 @@
 
 /* desc 부분 */
 .card p {
+  background-color: cadetblue;
   font-size: 16px;
   line-height: 1.5;
 }
