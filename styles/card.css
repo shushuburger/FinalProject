@@ -53,10 +53,6 @@
   display: block;
 }
 
-/* ------------------------------
-   (선택) 슬라이드 모드에서만 중앙카드를 키우려면 :not(.show-all)으로 범위를 제한
-   기존 규칙 대신 아래 규칙을 사용하세요 — 슬라이드 모드에서만 작동합니다.
-   ------------------------------ */
 .card-slider .cards-container:not(.show-all) .card:nth-child(2) {
   transform: scale(1.05);
   box-shadow: 0 12px 25px rgba(0,0,0,0.15);

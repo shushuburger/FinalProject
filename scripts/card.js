@@ -2,80 +2,80 @@
 // 주석 삭제하지 말 것! github에서 편집할 때 기준점 삼을 거임
 
 
-  const container = document.querySelector('.cards-container');
-  const ageButtons = document.querySelectorAll('.age-buttons button'); // 연령대 버튼
+const container = document.querySelector('.cards-container');
+const ageButtons = document.querySelectorAll('.age-buttons button'); // 연령대 버튼
 
-  const cards = container.children;
-  const prevBtn = document.querySelector('.prev-btn');
-  const nextBtn = document.querySelector('.next-btn');
-  const cardWidth = cards[0].offsetWidth + 20; 
-  let currentIndex = 0;
+const cards = container.children;
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+const cardWidth = cards[0].offsetWidth + 20;
+let currentIndex = 0;
 
-  let isDragging = false;
-  let startX = 0;
-  let currentTranslate = 0;
-  let prevTranslate = 0;
-  let animationID;
+let isDragging = false;
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationID;
 
-  function setSliderPosition() {
-    container.style.transform = `translateX(${currentTranslate}px)`;
-  }
+function setSliderPosition() {
+  container.style.transform = `translateX(${currentTranslate}px)`;
+}
 
-  function animation() {
-    setSliderPosition();
-    if (isDragging) requestAnimationFrame(animation);
-  }
+function animation() {
+  setSliderPosition();
+  if (isDragging) requestAnimationFrame(animation);
+}
 
-  function getPositionX(e) {
-    return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-  }
+function getPositionX(e) {
+  return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+}
 
 // 드래그 동작 
-  function touchStart(e) {
-    isDragging = true;
-    startX = getPositionX(e);
-    animationID = requestAnimationFrame(animation);
-  }
+function touchStart(e) {
+  isDragging = true;
+  startX = getPositionX(e);
+  animationID = requestAnimationFrame(animation);
+}
 
-  function touchMove(e) {
-    if (!isDragging) return;
-    const currentX = getPositionX(e);
-    const diff = currentX - startX;
-    currentTranslate = prevTranslate + diff;
-  }
+function touchMove(e) {
+  if (!isDragging) return;
+  const currentX = getPositionX(e);
+  const diff = currentX - startX;
+  currentTranslate = prevTranslate + diff;
+}
 
-  function touchEnd() {
-    isDragging = false;
-    cancelAnimationFrame(animationID);
+function touchEnd() {
+  isDragging = false;
+  cancelAnimationFrame(animationID);
 
-    const movedBy = currentTranslate - prevTranslate;
+  const movedBy = currentTranslate - prevTranslate;
 
-    if (movedBy < -50) {
-      nextSlide();
-    } else if (movedBy > 50) {
-      prevSlide();
-    } else {
-      currentTranslate = prevTranslate;
-      setSliderPosition();
-    }
-  }
-
-  function updateTranslate() {
-    currentTranslate = -currentIndex * cardWidth;
-    prevTranslate = currentTranslate;
+  if (movedBy < -50) {
+    nextSlide();
+  } else if (movedBy > 50) {
+    prevSlide();
+  } else {
+    currentTranslate = prevTranslate;
     setSliderPosition();
   }
+}
+
+function updateTranslate() {
+  currentTranslate = -currentIndex * cardWidth;
+  prevTranslate = currentTranslate;
+  setSliderPosition();
+}
 
 // 이전/다음 (넘기는) 슬라이더 동작 
-  function nextSlide() {
-    currentIndex++;
-    updateTranslate();
-  }
+function nextSlide() {
+  currentIndex++;
+  updateTranslate();
+}
 
-  function prevSlide() {
-    currentIndex--;
-    updateTranslate();
-  }
+function prevSlide() {
+  currentIndex--;
+  updateTranslate();
+}
 
 let isAnimating = false;
 
@@ -155,11 +155,11 @@ function restartLottieAnimations() {
     player.load(src);
   });
 }
-setInterval(nextSlide, 1000);
+setInterval(nextSlide, 5000);
 // 등급에 따라 카드 안의 내용 렌더링
 // 부모 카테고리
 function renderParentCards(grade) {
-  const container = document.querySelector('.cards-container'); 
+  const container = document.querySelector('.cards-container');
   container.innerHTML = ''; // 기존 카드 제거
 
   const parent_cards = ParentData[grade];
@@ -188,7 +188,7 @@ function renderParentCards(grade) {
     // 설명 추가
     const descEl = document.createElement('p');
     descEl.innerHTML = card.desc;
-  
+
     // 설명(desc)이 있을 때만 추가
     if (card.desc) {
       const descEl = document.createElement('p');
@@ -202,7 +202,7 @@ function renderParentCards(grade) {
 
 // 대학생/성인 카테고리
 function renderAdultCards(grade) {
-  const container = document.querySelector('.cards-container'); 
+  const container = document.querySelector('.cards-container');
   container.innerHTML = ''; // 기존 카드 제거
 
   const adult_cards = AdultData[grade];
@@ -231,7 +231,7 @@ function renderAdultCards(grade) {
     // 설명 추가
     const descEl = document.createElement('p');
     descEl.innerHTML = card.desc;
-  
+
     // 설명(desc)이 있을 때만 추가
     if (card.desc) {
       const descEl = document.createElement('p');
@@ -245,7 +245,7 @@ function renderAdultCards(grade) {
 
 // 노년층 카테고리 
 function renderElderlyCards(grade) {
-  const container = document.querySelector('.cards-container'); 
+  const container = document.querySelector('.cards-container');
   container.innerHTML = ''; // 기존 카드 제거
 
   const elderly_cards = ElderlyData[grade];
@@ -274,7 +274,7 @@ function renderElderlyCards(grade) {
     // 설명 추가
     const descEl = document.createElement('p');
     descEl.innerHTML = card.desc;
-  
+
     // 설명(desc)이 있을 때만 추가
     if (card.desc) {
       const descEl = document.createElement('p');
@@ -300,15 +300,15 @@ const ParentData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '아이와 함께 공원 산책이나 야외 운동을 즐기기에 매우 좋은 날입니다.',
-        lottieHTML: `
+      title: '아이와 함께 공원 산책이나 야외 운동을 즐기기에 매우 좋은 날입니다.',
+      lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/0095eab0-1916-4654-b18c-14fc5430de98/sP7axHg5g9.lottie" 
           background="transparent" speed="1" style="width: 250px; height: 250px" 
           loop autoplay></dotlottie-player>`
     },
     {
-      title: '햇볕 좋은 날, 아이의 옷이나 침구를 바람 잘 드는 곳에 널어보세요.', 
+      title: '햇볕 좋은 날, 아이의 옷이나 침구를 바람 잘 드는 곳에 널어보세요.',
       html: `
       <style>
         .laundry-line {
@@ -375,7 +375,7 @@ const ParentData = {
         </dotlottie-player>`
     },
     {
-      title: '공기가 다소 탁할 수 있으니, 야외 활동은 짧게 하고 실내 놀이를 병행해 주세요.', 
+      title: '공기가 다소 탁할 수 있으니, 야외 활동은 짧게 하고 실내 놀이를 병행해 주세요.',
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/7823884f-4d41-452d-bb32-639fbb84d83f/zD7uamPP15.lottie" 
@@ -389,8 +389,8 @@ const ParentData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '창문을 열어 환기할 수는 있지만, 미세먼지 예보를 확인하고 짧게 하는 것이 좋습니다.',
-        lottieHTML: `
+      title: '창문을 열어 환기할 수는 있지만, 미세먼지 예보를 확인하고 짧게 하는 것이 좋습니다.',
+      lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/7823884f-4d41-452d-bb32-639fbb84d83f/zD7uamPP15.lottie" 
           background="transparent" speed="1" style="width: 80px; height: 80px" 
@@ -427,8 +427,8 @@ const ParentData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '외출 후에는 옷을 털고 손발을 깨끗이 씻겨주세요. 눈과 코도 미지근한 물로 세척하면 좋습니다.',
-        lottieHTML: `
+      title: '외출 후에는 옷을 털고 손발을 깨끗이 씻겨주세요. 눈과 코도 미지근한 물로 세척하면 좋습니다.',
+      lottieHTML: `
            <dotlottie-player 
            src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
            background="transparent" speed="1" style="width: 300px; height: 300px" 
@@ -447,8 +447,8 @@ const ParentData = {
     {
       title: '불가피하게 외출해야 한다면, KF94 이상의 마스크를 꼭 착용하게 해 주세요.',
       desc: [
-        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #007BFF; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a>',
-        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #007BFF; text-decoration: underline;"> 마스크 구매 링크 </a>'
+        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #c1ddfcff; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a><br>',
+        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #c1ddfcff; text-decoration: underline;"> 마스크 구매 링크 </a>'
       ],
       lottieHTML: `
         <dotlottie-player 
@@ -457,8 +457,8 @@ const ParentData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '공기청정기를 사용하거나 젖은 수건을 활용해 실내 공기 질을 관리해 주세요.',
-        lottieHTML: `
+      title: '공기청정기를 사용하거나 젖은 수건을 활용해 실내 공기 질을 관리해 주세요.',
+      lottieHTML: `
           <img src="assets/icons/air_purifier.gif" alt="공기청정기 사용 안내" style="width: 100%; max-width: 150px;" />`
     }
   ]
@@ -476,15 +476,15 @@ const AdultData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '창문을 열어 실내 공기를 자연스럽게 환기시키면 머리가 맑아져요.',
-        lottieHTML: `
+      title: '창문을 열어 실내 공기를 자연스럽게 환기시키면 머리가 맑아져요.',
+      lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
           background="transparent" speed="1" style="width: 300px; height: 300px" 
           loop autoplay></dotlottie-player>`
     },
     {
-      title: '야외 빨래도 무리 없이 가능하니 주말에 이불빨래 도전해보세요.', 
+      title: '야외 빨래도 무리 없이 가능하니 주말에 이불빨래 도전해보세요.',
       html: `
       <style>
         .laundry-line {
@@ -549,7 +549,7 @@ const AdultData = {
         loop autoplay></dotlottie-player>`
     },
     {
-      title: '활동 후 손 씻기, 세안은 필수! 특히 렌즈를 착용하는 분은 눈 건강에 신경 써야 합니다.', 
+      title: '활동 후 손 씻기, 세안은 필수! 특히 렌즈를 착용하는 분은 눈 건강에 신경 써야 합니다.',
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
@@ -557,8 +557,8 @@ const AdultData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '통학이나 통근 시에는 사람이 붐비는 장소를 피하고 짧은 경로를 선택해보세요.',
-        lottieHTML: `
+      title: '통학이나 통근 시에는 사람이 붐비는 장소를 피하고 짧은 경로를 선택해보세요.',
+      lottieHTML: `
           <img src="assets/icons/no_people.gif" alt="공기청정기 사용 안내" style="width: 100%; max-width: 150px;" />`
     }
   ],
@@ -581,8 +581,8 @@ const AdultData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '외출 후 옷을 잘 털고 샤워로 먼지를 제거하는 습관이 중요합니다.',
-        lottieHTML: `
+      title: '외출 후 옷을 잘 털고 샤워로 먼지를 제거하는 습관이 중요합니다.',
+      lottieHTML: `
            <dotlottie-player 
            src="https://lottie.host/698c3680-26b6-4a39-8688-a0e7fa5f6eea/YdUdbDRmk7.lottie" 
            background="transparent" speed="1" style="width: 300px; height: 300px" 
@@ -611,8 +611,8 @@ const AdultData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
-        lottieHTML: `
+      title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
+      lottieHTML: `
           <img src="assets/icons/air_purifier.gif" alt="공기청정기 사용 안내" style="width: 100%; max-width: 150px;" />`
     }
   ]
@@ -630,15 +630,15 @@ const ElderlyData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '집안 환기를 자주 해 주시고, 실내 공기 흐름을 자연스럽게 유지해 주세요.',
-        lottieHTML: `
+      title: '집안 환기를 자주 해 주시고, 실내 공기 흐름을 자연스럽게 유지해 주세요.',
+      lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
           background="transparent" speed="1" style="width: 300px; height: 300px" 
           loop autoplay></dotlottie-player>`
     },
     {
-      title: '햇빛이 좋은 날엔 이불이나 옷가지도 야외에 널어 햇살을 쬐게 해주세요.', 
+      title: '햇빛이 좋은 날엔 이불이나 옷가지도 야외에 널어 햇살을 쬐게 해주세요.',
       html: `
       <style>
         .laundry-line {
@@ -703,7 +703,7 @@ const ElderlyData = {
         loop autoplay></dotlottie-player>`
     },
     {
-      title: '손 씻기와 세안은 외출 후 반드시 실시해 호흡기 감염을 예방하세요.', 
+      title: '손 씻기와 세안은 외출 후 반드시 실시해 호흡기 감염을 예방하세요.',
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
@@ -711,8 +711,8 @@ const ElderlyData = {
         loop autoplay></dotlottie-player>`
     },
     {
-        title: '환기는 가능하지만, 미세먼지 농도를 확인하고 짧게 진행하는 것이 좋습니다.',
-        lottieHTML: `
+      title: '환기는 가능하지만, 미세먼지 농도를 확인하고 짧게 진행하는 것이 좋습니다.',
+      lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/7823884f-4d41-452d-bb32-639fbb84d83f/zD7uamPP15.lottie" 
           background="transparent" speed="1" style="width: 80px; height: 80px" 
@@ -752,8 +752,8 @@ const ElderlyData = {
           </dotlottie-player>`
     },
     {
-        title: '외출 후에는 손발을 씻고, 코 안이나 눈 주변을 미지근한 물로 정리해 주세요. ',
-        lottieHTML: `
+      title: '외출 후에는 손발을 씻고, 코 안이나 눈 주변을 미지근한 물로 정리해 주세요. ',
+      lottieHTML: `
            <dotlottie-player 
            src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
            background="transparent" speed="1" style="width: 300px; height: 300px" 
@@ -772,18 +772,20 @@ const ElderlyData = {
     {
       title: '실내 공기질 관리가 중요합니다. 젖은 수건을 걸어두거나 공기청정기를 활용하세요.',
       lottieHTML: `
-        <img src="assets/icons/air_purifier.gif" alt="공기청정기 사용 안내" style="width: 100%; max-width: 150px;" />`
-    },
+          <dotlottie-player 
+          src="https://lottie.host/4eef4f0c-0edc-40e9-a113-254159cdd638/Oi6GEYJ3W7.lottie" 
+          background="transparent" speed="1" style="width: 250px; height: 250px" 
+          loop autoplay></dotlottie-player>`    },
     {
-        title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
-        desc: [
+      title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
+      desc: [
         '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #007BFF; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a>',
         '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #007BFF; text-decoration: underline;"> 마스크 구매 링크 </a>'
-        ],
-        lottieHTML: `
+      ],
+      lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
-          background="transparent" speed="1" style="width: 300px; height: 300px" 
+          background="transparent" speed="1" style="width: 250px; height: 250px" 
           loop autoplay></dotlottie-player>`
     }
   ]
@@ -806,7 +808,7 @@ function getLevelForJson(value) {
 
 const levels = ["좋음", "보통", "나쁨", "매우 나쁨"]; // 미세먼지 등급을 배열로 정의 (슬라이더와 매핑될 순서)
 
- // HTML 요소: 슬라이더, 가이드라인 상자, 가이드라인 텍스트를 가져옴
+// HTML 요소: 슬라이더, 가이드라인 상자, 가이드라인 텍스트를 가져옴
 const slider = document.getElementById('levelSlider');
 const guidelineBox = document.getElementById('guidelineBox');
 const guidelineText = document.getElementById('guidelineText');
@@ -857,15 +859,15 @@ slider.addEventListener('input', () => {
 nextBtn.addEventListener('click', nextSlide);
 prevBtn.addEventListener('click', prevSlide);
 
-  // 드래그
-  container.addEventListener('mousedown', touchStart);
-  container.addEventListener('mousemove', touchMove);
-  container.addEventListener('mouseup', touchEnd);
-  //container.addEventListener('mouseleave', touchEnd);
+// 드래그
+container.addEventListener('mousedown', touchStart);
+container.addEventListener('mousemove', touchMove);
+container.addEventListener('mouseup', touchEnd);
+//container.addEventListener('mouseleave', touchEnd);
 
-  //container.addEventListener('touchstart', touchStart);
-  container.addEventListener('touchmove', touchMove);
-  container.addEventListener('touchend', touchEnd);
+//container.addEventListener('touchstart', touchStart);
+container.addEventListener('touchmove', touchMove);
+container.addEventListener('touchend', touchEnd);
 
 // 초기화 시 active 클래스 설정
 document.addEventListener('DOMContentLoaded', () => {
