@@ -20,11 +20,48 @@
   justify-content: center; /* 가운데 정렬 */
 }
 
-.cards-container.show-all .card {
-  flex: 0 0 30%; /* 한 줄에 3개 정도 들어오게 */
-  margin: 10px;
-  height: auto; /* 높이 자동 */
+/* ------------------------------
+   전체보기(show-all)에서 모든 카드를 80%로 통일 축소 (우선순위 보장)
+   ------------------------------ */
+.cards-container.show-all .card{
+  flex: 0 0 27%;
+  transform: scale(0.9) !important;
+  transform-origin: center center !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important;
 }
+.card-slider .cards-container.show-all .card:nth-child(2) {
+  transform: scale(0.9) !important;
+  transform-origin: center center !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important; /* 그림자 줄여서 균일하게 */
+}
+
+/* 텍스트 · 미디어도 확실히 줄이기 */
+.cards-container.show-all .card h3,
+.cards-container.show-all .card p {
+  font-size: 80% !important;
+  line-height: 1.2 !important;
+  text-align: center;
+}
+
+/* dotlottie-player, img, svg, video 등 내부 미디어가 부모 변형에 반응하도록 안전조치 */
+.cards-container.show-all .card .dotlottie-player,
+.cards-container.show-all .card img,
+.cards-container.show-all .card svg,
+.cards-container.show-all .card video {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* ------------------------------
+   (선택) 슬라이드 모드에서만 중앙카드를 키우려면 :not(.show-all)으로 범위를 제한
+   기존 규칙 대신 아래 규칙을 사용하세요 — 슬라이드 모드에서만 작동합니다.
+   ------------------------------ */
+.card-slider .cards-container:not(.show-all) .card:nth-child(2) {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
 
 /* 버튼 스타일 */
 #toggleViewBtn {

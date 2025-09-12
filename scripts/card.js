@@ -80,6 +80,7 @@
 let isAnimating = false;
 
 function nextSlide() { // 다음 카드 넘기기
+  if (isShowAll) return; // 전체보기 모드에서는 멈춤
   if (isAnimating) return;
   isAnimating = true;
 
@@ -96,6 +97,7 @@ function nextSlide() { // 다음 카드 넘기기
 }
 
 function prevSlide() { // 이전 카드 넘기기
+  if (isShowAll) return; // 전체보기 모드에서는 멈춤
   if (isAnimating) return;
   isAnimating = true;
 
@@ -113,6 +115,7 @@ function prevSlide() { // 이전 카드 넘기기
     restartLottieAnimations(); // 애니메이션 다시 로드
   }, 300);
 }
+
 const toggleViewBtn = document.getElementById('toggleViewBtn');
 let isShowAll = false;
 let autoSlideInterval;
@@ -152,7 +155,7 @@ function restartLottieAnimations() {
     player.load(src);
   });
 }
-setInterval(nextSlide, 3000);
+setInterval(nextSlide, 1000);
 // 등급에 따라 카드 안의 내용 렌더링
 // 부모 카테고리
 function renderParentCards(grade) {
