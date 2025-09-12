@@ -14,44 +14,66 @@
 
 /* 전체보기 모드 */
 .cards-container.show-all {
-  transform: none !important; /* 캐러셀 transform 제거 */
+  transform: none !important;
   transition: none !important;
-  flex-wrap: wrap; /* 여러 줄 */
-  justify-content: center; /* 가운데 정렬 */
+  flex-wrap: wrap;
+  justify-content: center;
+  /* 컨테이너가 내용 높이에 맞게 자동 확장 */
+  height: auto !important;
+  overflow: visible !important;
 }
 
-/* ------------------------------
-   전체보기(show-all)에서 모든 카드를 80%로 통일 축소 (우선순위 보장)
-   ------------------------------ */
-.cards-container.show-all .card{
+/* 전체보기 모드 카드 */
+.cards-container.show-all .card {
   flex: 0 0 27%;
-  transform: scale(0.9) !important;
+  /* 카드 자체 높이도 조금 줄임 */
+  height: 325px; /* 필요 시 200~260px 사이 조절 */
+  margin: 10px;
+  transform: scale(1) !important;
   transform-origin: center center !important;
   box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important;
 }
-.card-slider .cards-container.show-all .card:nth-child(2) {
-  transform: scale(0.9) !important;
-  transform-origin: center center !important;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important; /* 그림자 줄여서 균일하게 */
-}
 
-/* 텍스트 · 미디어도 확실히 줄이기 */
+/* 카드 안 글자·미디어도 크기 줄이기 */
 .cards-container.show-all .card h3,
 .cards-container.show-all .card p {
-  font-size: 80% !important;
+  font-size: 60% !important;
   line-height: 1.2 !important;
   text-align: center;
 }
-
-/* dotlottie-player, img, svg, video 등 내부 미디어가 부모 변형에 반응하도록 안전조치 */
-.cards-container.show-all .card .dotlottie-player,
-.cards-container.show-all .card img,
-.cards-container.show-all .card svg,
-.cards-container.show-all .card video {
-  max-width: 100% !important;
-  height: auto !important;
-  display: block;
+/* 전체보기 모드에서 미디어 요소들을 80% 크기로 조정 */
+.cards-container.show-all .card dotlottie-player {
+  transform: scale(0.8) !important;
+  transform-origin: center center !important;
 }
+
+.cards-container.show-all .card img {
+  width: 80% !important;
+  height: 80% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+.cards-container.show-all .card svg {
+  width: 80% !important;
+  height: 80% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+.cards-container.show-all .card video {
+  width: 80% !important;
+  height: 80% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+/* HTML 요소로 삽입된 애니메이션들도 조정 */
+.cards-container.show-all .card .laundry-line {
+  transform: scale(0.7) !important;
+  transform-origin: center center !important;
+}
+
 
 .card-slider .cards-container:not(.show-all) .card:nth-child(2) {
   transform: scale(1.05);
@@ -84,7 +106,7 @@
 }
 
 .guide-section {
-  background-color: #14b977;
+  background-color: #efefef;
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 12px;
@@ -96,7 +118,7 @@
 
 /*카드 집합 상위1*/
 .card-slider {
-  background-color: #f35d5d;
+  /*background-color: #f35d5d;*/
   position: relative;
   width: 100%;
   height: 80%;
@@ -105,7 +127,7 @@
 
 /*카드 집합 상위2*/
 .cards-wrapper {
-  background-color: rgb(255, 239, 58);
+  /*background-color: rgb(255, 239, 58);*/
   height: 100%;
   overflow: hidden;
   align-items: center;
@@ -114,7 +136,7 @@
 
 /*카드 집합 상위3*/
 .cards-container {
-  background-color: #64b9ff;
+  /*background-color: #64b9ff;*/
   margin-top: 15px;
   margin-bottom: 15px;
   display: flex;
@@ -178,7 +200,7 @@
 
 /*카드 안에 텍스트(text)*/
 .card h3 {
-  background-color: aquamarine;
+  /*background-color: aquamarine;*/
   padding: 0 20px;
   font-size: 20px;
   font-weight: bold;

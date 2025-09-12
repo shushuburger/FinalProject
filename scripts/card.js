@@ -370,7 +370,7 @@ const ParentData = {
         <dotlottie-player 
         src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
         background="transparent" speed="1" 
-        style="width: 300px; height: 300px" 
+        style="width: 300px; height: 250px" 
         loop autoplay>
         </dotlottie-player>`
     },
@@ -399,7 +399,7 @@ const ParentData = {
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
           background="transparent" speed="1" 
-          style="width: 200px; height: 200px" 
+          style="width: 200px; height: 170px" 
           loop autoplay>
           </dotlottie-player>`
     }
@@ -423,7 +423,7 @@ const ParentData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/ad168ad9-6e62-48e7-a646-df23710a7861/WsgWdHhWy5.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -431,7 +431,7 @@ const ParentData = {
       lottieHTML: `
            <dotlottie-player 
            src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
-           background="transparent" speed="1" style="width: 300px; height: 300px" 
+           background="transparent" speed="1" style="width: 300px; height: 250px" 
            loop autoplay></dotlottie-player>`
     }
   ],
@@ -441,7 +441,7 @@ const ParentData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/ad168ad9-6e62-48e7-a646-df23710a7861/WsgWdHhWy5.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -453,7 +453,7 @@ const ParentData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -472,7 +472,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/686158a3-a48e-4e61-b872-6c0f09787b34/q2pSnyCi2t.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 250px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -480,7 +480,7 @@ const AdultData = {
       lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
-          background="transparent" speed="1" style="width: 300px; height: 300px" 
+          background="transparent" speed="1" style="width: 250px; height: 250px" 
           loop autoplay></dotlottie-player>`
     },
     {
@@ -545,7 +545,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -553,7 +553,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -568,7 +568,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/73de66eb-ff48-4856-876b-ee434cf1779c/W2EQfO7dcn.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 250px; height: 300px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -577,7 +577,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -585,7 +585,7 @@ const AdultData = {
       lottieHTML: `
            <dotlottie-player 
            src="https://lottie.host/698c3680-26b6-4a39-8688-a0e7fa5f6eea/YdUdbDRmk7.lottie" 
-           background="transparent" speed="1" style="width: 300px; height: 300px" 
+           background="transparent" speed="1" style="width: 300px; height: 250px" 
            loop autoplay></dotlottie-player>`
     }
   ],
@@ -595,7 +595,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/08c7f9c8-e441-42a8-a934-dece361fcf18/gmxeZGGUA1.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -607,7 +607,7 @@ const AdultData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -626,7 +626,7 @@ const ElderlyData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/686158a3-a48e-4e61-b872-6c0f09787b34/q2pSnyCi2t.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -634,7 +634,7 @@ const ElderlyData = {
       lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
-          background="transparent" speed="1" style="width: 300px; height: 300px" 
+          background="transparent" speed="1" style="width: 300px; height: 250px" 
           loop autoplay></dotlottie-player>`
     },
     {
@@ -699,7 +699,7 @@ const ElderlyData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/562707af-f765-4c93-972d-de1fff0ed6a4/jsL1FNTwl5.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -707,7 +707,7 @@ const ElderlyData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -721,7 +721,7 @@ const ElderlyData = {
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
           background="transparent" speed="1" 
-          style="width: 200px; height: 200px" 
+          style="width: 200px; height: 170px" 
           loop autoplay>
           </dotlottie-player>`
     }
@@ -733,7 +733,7 @@ const ElderlyData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/73de66eb-ff48-4856-876b-ee434cf1779c/W2EQfO7dcn.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -747,7 +747,7 @@ const ElderlyData = {
           <dotlottie-player 
           src="https://lottie.host/fed7c2ff-ed66-4105-b405-290d3de6144b/kgcz4VfE4E.lottie" 
           background="transparent" speed="1" 
-          style="width: 200px; height: 200px" 
+          style="width: 200px; height: 170px" 
           loop autoplay>
           </dotlottie-player>`
     },
@@ -756,7 +756,7 @@ const ElderlyData = {
       lottieHTML: `
            <dotlottie-player 
            src="https://lottie.host/4ab28cef-3670-4564-a8de-74518b8af371/T6AbMATJ2t.lottie" 
-           background="transparent" speed="1" style="width: 300px; height: 300px" 
+           background="transparent" speed="1" style="width: 300px; height: 250px" 
            loop autoplay></dotlottie-player>`
     }
   ],
@@ -766,7 +766,7 @@ const ElderlyData = {
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/08c7f9c8-e441-42a8-a934-dece361fcf18/gmxeZGGUA1.lottie" 
-        background="transparent" speed="1" style="width: 300px; height: 300px" 
+        background="transparent" speed="1" style="width: 300px; height: 250px" 
         loop autoplay></dotlottie-player>`
     },
     {
@@ -774,7 +774,7 @@ const ElderlyData = {
       lottieHTML: `
           <dotlottie-player 
           src="https://lottie.host/4eef4f0c-0edc-40e9-a113-254159cdd638/Oi6GEYJ3W7.lottie" 
-          background="transparent" speed="1" style="width: 250px; height: 250px" 
+          background="transparent" speed="1" style="width: 250px; height: 200px" 
           loop autoplay></dotlottie-player>`    },
     {
       title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
