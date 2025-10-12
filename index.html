@@ -121,7 +121,6 @@
             </div>
         </div>
     </div>
-    <!-- 오버레이 (body 맨 아래에 두는 게 안전) -->
     <div id="ageOverlay" class="overlay" aria-modal="true" role="dialog">
         <div class="overlay-content">
             <h5>연령대를 선택해주세요</h5>
@@ -186,6 +185,51 @@
     btn.classList.toggle('active', btn.getAttribute('data-age') === initAge);
   });
 })();
+
+(function () {
+  const overlay = document.getElementById('ageOverlay');
+  const ageSelect = document.getElementById('ageSelect');
+  const confirmBtn = document.getElementById('confirmAgeBtn');
+  const ageButtons = document.querySelectorAll('.age-buttons button');
+
+  if (!overlay || !ageSelect || !confirmBtn) return;
+
+  // localStorage에서 이전 선택 불러오기
+  const savedAge = localStorage.getItem('selectedAgeGroup');
+
+  if (savedAge) {
+    overlay.classList.add('hidden');
+    setAgeGroup(savedAge);
+  } else {
+    overlay.classList.remove('hidden');
+  }
+
+  // 버튼 선택 & active 적용하는 함수
+  function setAgeGroup(age) {
+    ageButtons.forEach(btn => {
+      const isTarget = btn.getAttribute('data-age') === age;
+      btn.classList.toggle('active', isTarget);
+      if (isTarget) {
+        setTimeout(() => btn.click(), 0); 
+      }
+    });
+  }
+
+  // 확인 버튼 클릭 이벤트
+  confirmBtn.addEventListener('click', () => {
+    const selectedAge = ageSelect.value;
+
+    localStorage.setItem('selectedAgeGroup', selectedAge);
+
+    setAgeGroup(selectedAge);
+
+    overlay.classList.add('hidden');
+  });
+  //로컬스토리지 삭제할 때 이거 하면 됨!!!!
+  //localStorage.clear();
+
+})();
+
 </script>
 
 </body>

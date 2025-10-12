@@ -407,7 +407,7 @@ const ParentData = {
   '나쁨': [
     {
       title: '아이의 폐 건강을 위해 외출 시 KF80 이상의 보건용 마스크를 꼭 착용시켜 주세요.',
-      desc: '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #007BFF; text-decoration: underline;">올바른 마스크 착용법 보기</a>',
+      desc: '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #ffffffff; text-decoration: underline;">올바른 마스크 착용법 보기</a>',
       lottieHTML: `
         <dotlottie-player 
           src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
@@ -447,8 +447,8 @@ const ParentData = {
     {
       title: '불가피하게 외출해야 한다면, KF94 이상의 마스크를 꼭 착용하게 해 주세요.',
       desc: [
-        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #c1ddfcff; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a><br>',
-        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #c1ddfcff; text-decoration: underline;"> 마스크 구매 링크 </a>'
+        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #ffffffff; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a><br>',
+        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #ffffffff; text-decoration: underline;"> 마스크 구매 링크 </a>'
       ],
       lottieHTML: `
         <dotlottie-player 
@@ -573,7 +573,7 @@ const AdultData = {
     },
     {
       title: '호흡기 질환 예방을 위해 KF80 이상의 마스크를 착용해 주세요.',
-      desc: '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #007BFF; text-decoration: underline;">올바른 마스크 착용법 보기</a>',
+      desc: '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #ffffffff; text-decoration: underline;">올바른 마스크 착용법 보기</a>',
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/783839fc-3100-4022-80f5-2bc875facac7/suGs8mWnge.lottie" 
@@ -601,8 +601,8 @@ const AdultData = {
     {
       title: '외출이 불가피할 경우 KF94 이상의 마스크는 꼭 착용하고, 장시간 외출은 피하세요.',
       desc: [
-        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #a9f572ff; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a><br>',
-        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #f69eeeff; text-decoration: underline;"> 마스크 구매 링크 </a>'
+        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #ffffffff; text-decoration: underline; background-color: transparent;"> 올바른 마스크 착용법 보기 </a><br>',
+        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #ffffffff; text-decoration: underline; background-color: transparent;"> 마스크 구매 링크 </a>'
       ],
       lottieHTML: `
         <dotlottie-player 
@@ -729,7 +729,7 @@ const ElderlyData = {
   '나쁨': [
     {
       title: '폐 기능이 약하신 분들은 외출 시 반드시 보건용 마스크를 착용해 주세요.',
-      desc: '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #007BFF; text-decoration: underline;">올바른 마스크 착용법 보기</a>',
+      desc: '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #ffffffff; text-decoration: underline;">올바른 마스크 착용법 보기</a>',
       lottieHTML: `
         <dotlottie-player 
         src="https://lottie.host/73de66eb-ff48-4856-876b-ee434cf1779c/W2EQfO7dcn.lottie" 
@@ -770,17 +770,15 @@ const ElderlyData = {
         loop autoplay></dotlottie-player>`
     },
     {
-      title: '실내 공기질 관리가 중요합니다. 젖은 수건을 걸어두거나 공기청정기를 활용하세요.',
+      title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
       lottieHTML: `
-          <dotlottie-player 
-          src="https://lottie.host/4eef4f0c-0edc-40e9-a113-254159cdd638/Oi6GEYJ3W7.lottie" 
-          background="transparent" speed="1" style="width: 250px; height: 200px" 
-          loop autoplay></dotlottie-player>`    },
+          <img src="assets/icons/air_purifier.gif" alt="공기청정기 사용 안내" style="width: 100%; max-width: 150px;" />`
+    },
     {
       title: '실내 공기질도 주의! 공기청정기 가동이나 실내 습도 유지를 병행하세요.',
       desc: [
-        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #007BFF; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a><br>',
-        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #007BFF; text-decoration: underline;"> 마스크 구매 링크 </a>'
+        '<a href="https://www.kdca.go.kr/gallery.es?mid=a20503010000&bid=0002&act=view&list_no=144638" target="_blank" style="color: #ffffffff; text-decoration: underline;"> 올바른 마스크 착용법 보기 </a><br>',
+        '<a href="https://www.coupang.com/np/search?component=&q=보건용+마스크&channel=user" target="_blank" style="color: #ffffffff; text-decoration: underline;"> 마스크 구매 링크 </a>'
       ],
       lottieHTML: `
           <dotlottie-player 
