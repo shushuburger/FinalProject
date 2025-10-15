@@ -2,19 +2,123 @@
 /* 이 아래에서 작업하세요!! (경민,여민) */
 /* 주석 삭제하지 말 것! (github 편집 시 기준점으로 삼을 거임) */
 
+/* 기본 캐러셀 모드 */
+.cards-container {
+  display: flex;
+  height: 90%;
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease;
+  /* 기본 모드에서는 한 줄 */
+  flex-wrap: nowrap;
+}
+
+/* 전체보기 모드 */
+.cards-container.show-all {
+  transform: none !important;
+  transition: none !important;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* 컨테이너가 내용 높이에 맞게 자동 확장 */
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* 전체보기 모드 카드 */
+.cards-container.show-all .card {
+  flex: 0 0 27%;
+  /* 카드 자체 높이도 조금 줄임 */
+  height: 325px; /* 필요 시 200~260px 사이 조절 */
+  margin: 10px;
+  transform: scale(1) !important;
+  transform-origin: center center !important;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.08) !important;
+}
+
+/* 카드 안 글자·미디어도 크기 줄이기 */
+.cards-container.show-all .card h3,
+.cards-container.show-all .card p {
+  font-size: 60% !important;
+  line-height: 1.2 !important;
+  text-align: center;
+}
+/* 전체보기 모드에서 미디어 요소들을 80% 크기로 조정 */
+.cards-container.show-all .card dotlottie-player {
+  transform: scale(0.8) !important;
+  transform-origin: center center !important;
+}
+
+.cards-container.show-all .card img {
+  width: 80% !important;
+  height: 80% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+.cards-container.show-all .card svg {
+  width: 80% !important;
+  height: 80% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+.cards-container.show-all .card video {
+  width: 80% !important;
+  height: 80% !important;
+  max-width: 200px !important;
+  max-height: 200px !important;
+}
+
+/* HTML 요소로 삽입된 애니메이션들도 조정 */
+.cards-container.show-all .card .laundry-line {
+  transform: scale(0.7) !important;
+  transform-origin: center center !important;
+}
+
+
+.card-slider .cards-container:not(.show-all) .card:nth-child(2) {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+
+/* 버튼 스타일 */
+#toggleViewBtn {
+  padding: 8px 16px;
+  background-color: #64b9ff;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+ /* 토글 버튼 */
+#toggleViewBtn .toggleButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #f03d3d;
+}
+#toggleViewBtn:hover {
+  background-color: #4da0e0;
+}
+
 .guide-section {
-  background-color: #ffffff;
+  background-color: #efefef;
   margin-top: 1rem;
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 550px;
+  height: 600px;
   overflow: hidden;
   perspective: 1000px;
 }
 
 /*카드 집합 상위1*/
 .card-slider {
+  /*background-color: #f35d5d;*/
   position: relative;
   width: 100%;
   height: 80%;
@@ -23,6 +127,7 @@
 
 /*카드 집합 상위2*/
 .cards-wrapper {
+  /*background-color: rgb(255, 239, 58);*/
   height: 100%;
   overflow: hidden;
   align-items: center;
@@ -31,8 +136,11 @@
 
 /*카드 집합 상위3*/
 .cards-container {
+  /*background-color: #64b9ff;*/
+  margin-top: 15px;
+  margin-bottom: 15px;
   display: flex;
-  height: 90%;
+  height: 77%;
   transform-style: preserve-3d;
   transition: transform 0.5s ease;
 }
@@ -41,10 +149,10 @@
 .card {
   flex: 0 0 70%;
   margin: 0 20px;
-  background-color: #ffffff;
+  background-color: #b65ef5;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  height: 70%;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,6 +169,7 @@
 /*카드 이동 버튼*/
 .prev-btn,
 .next-btn {
+  display: none;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -91,6 +200,7 @@
 
 /*카드 안에 텍스트(text)*/
 .card h3 {
+  /*background-color: aquamarine;*/
   padding: 0 20px;
   font-size: 20px;
   font-weight: bold;
@@ -99,6 +209,7 @@
 
 /* desc 부분 */
 .card p {
+  background-color: cadetblue;
   font-size: 16px;
   line-height: 1.5;
 }
@@ -176,3 +287,28 @@ body {
   color: rgb(0, 0, 0);
   border-color: #aaeafc;
 }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2147483647;
+  pointer-events: auto;
+}
+
+.overlay.hidden { display: none !important; }
+
+.overlay-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  width: 340px;
+  max-width: calc(100% - 40px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  z-index: 2147483648;
+  pointer-events: auto;
+}
+
